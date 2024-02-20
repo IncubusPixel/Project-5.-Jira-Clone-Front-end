@@ -83,7 +83,7 @@ describe('Issue create', () => {
   });
 });
 
-describe.only('Issue create', () => {
+describe('Issue create', () => {
   beforeEach(() => {
     cy.visit('/');
     cy.url().should('eq', `${Cypress.env('baseUrl')}project/board`).then((url) => {
@@ -159,7 +159,7 @@ describe.only('Issue create', () => {
   });
 });
 import { faker } from '@faker-js/faker';
-describe.only('Issue create', () => {
+describe('Issue create', () => {
   beforeEach(() => {
     cy.visit('/');
     cy.url().should('eq', `${Cypress.env('baseUrl')}project/board`).then((url) => {
