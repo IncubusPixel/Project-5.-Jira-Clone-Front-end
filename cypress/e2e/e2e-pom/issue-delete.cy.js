@@ -36,7 +36,7 @@ describe('Test Case 2: Issue Deletion Cancellation', () => {
             cy.contains('This is an issue of type: Task.').click();
         });
     });
-    it('Should open the issue detail view modal and delete it successfully', () => {
+    it('Should open the issue detail view modal and cancel it successfully', () => {
         // Assert the visibility of the issue detail view modal
         cy.get('[data-testid="modal:issue-details"]').should('be.visible');
 
