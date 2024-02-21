@@ -43,7 +43,7 @@ describe('Test Case 2: Issue Deletion Cancellation', () => {
         // Click on the delete button within the issue detail view modal
         cy.get('[data-testid="icon:trash"]').click();
 
-        // Wait for the confirmation modal to be visible
+        // Wait for the confirmation modal to be visible and click cancel
         cy.get('[data-testid="modal:confirm"]', { timeout: 10000 }).should('be.visible');
         cy.contains('Cancel').click();
         cy.wait(10000)
