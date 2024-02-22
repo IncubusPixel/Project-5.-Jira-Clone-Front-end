@@ -7,23 +7,22 @@ describe('Issue delete', () => {
   beforeEach(() => {
     cy.visit('/');
     cy.url().should('eq', `${Cypress.env('baseUrl')}project/board`).then((url) => {
-    //open issue detail modal with title from line 16  
-    cy.contains(issueTitle).click();
+      //open issue detail modal with title from line 16  
+      cy.contains(issueTitle).click();
     });
   });
-  // Instantiate an instance of the IssueModal class
-   
+
   //issue title, that we are testing with, saved into variable
   const issueTitle = 'This is an issue of type: Task.';
 
   it('Should delete issue successfully', () => {
-      cy.wait(5000)
-      IssueModal.clickDeleteButton();
-      IssueModal.confirmDeletion();
-      IssueModal.ensureIssueIsNotVisibleOnBoard(issueTitle);
+    cy.wait(5000)
+    IssueModal.clickDeleteButton();
+    IssueModal.confirmDeletion();
+    IssueModal.ensureIssueIsNotVisibleOnBoard(issueTitle);
   });
 
-  it.only('Should cancel deletion process successfully', () => {
+  it('Should cancel deletion process successfully', () => {
     //add steps to start deletion proces but cancel it
     IssueModal.clickDeleteButton();
     IssueModal.cancelDeletion();
